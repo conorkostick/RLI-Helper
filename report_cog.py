@@ -3,13 +3,10 @@ from discord.utils import get
 from discord.ext.commands import Bot
 import discord
 
-bot = Bot(command_prefix=">")
-Client = Bot('!')
-
-mods_chat = XXXXXXXXXXXXXXXXXX
-logs_chat = XXXXXXXXXXXXXXXXXX
-muted_role_id = XXXXXXXXXXXXXXXXXX
-mod_role_id = XXXXXXXXXXXXXXXXXX
+mods_chat = 00000000000000000
+logs_chat = 00000000000000000
+muted_role_id = 00000000000000000
+mod_role_id = 00000000000000000
 
 
 important_roles = [	"2000+",

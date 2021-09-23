@@ -4,51 +4,47 @@ from discord.ext.commands import Bot
 import random
 import discord
 
-bot = Bot(command_prefix=">")
-
-client = discord.Client()
-
 vintage_facts = [
-                    "***Did you know...***\nDFH stadium stands for Dave Forehead stadium!",
-                    "***Did you know...***\nDave Forehead actually lives in a shed!",
-                    "***Did you know...***\nSo far 9 players have played under the name “Team Forehead” they are: Enwrong, Daithi, Mayday, Tully, XDarkArcticX, SeeNaRee, Eddi, Durkan and Fusure",
-                    "***Did you know...***\nRL Ireland was founded by Joseph and Darcy.",
-                    "***Did you know...***\nRL Ireland was first set up as a facebook page on the 28th December 2015.",
-                    "***Did you know...***\nBarzey shares the same birthday as Rocket League! :smile:",
-                    "***Did you know...***\nDaithi has 2 LAN wins under his belt... and 0 friends!!! :joy:",
-                    "***Did you know...***\nTully is an All-Ireland garlic bread eating champion :joy:",
-                    "***Did you know...***\nThat the scarab is banned from competitive play due to it’s cubeular hitbox which allows it to hit the ball much harder than any other car at any angle. FACT!",
-                    "***Did you know...***\nContrary to popular belief Redeyes does not actually have red eyes!",
-                    "***Did you know...***\nSome say that Chef was born wearing a chefs hat, others say it’s just his hair.",
-                    "***Did you know...***\nFor ages, no-one knew what the LTX in LTXSam stood for. Now we know it's Lieutennant X Sam from his Xbox days!",
-                    "***Did you know...***\nDave Forehead, Daithi and Tully all share the honour of being the first ever Rocket League LAN winners in Ireland!",
-                    "***Did you know...***\nThat Lovelycans doesn’t just drink cans, in fact he rarely drinks cans!",
-                    "***Did you know...***\nAfter seeing him at Q-con, some believe that Dormer was born on the dancefloor.",
-                    "***Did you know...***\nJoseph once took up so much boost that it caused a drought in the pitch itself, this pitch is now called wasteland!",
-                    "***Did you know...***\nSome say that Mayday is so defensive that he’s never even been in the opponents half!",
-                    "***Did you know...***\nLegend has it Enwrong’s nickname used to be solar panel head….. Can’t imagine why",
-                    "***Did you know...***\nLawlurr was the first ever console player to win an RLI event.",
-                    "***Did you know...***\nNo-one knows if Mugg is a typo or if he meant to type it like that. What do you think?",
-                    "***Did you know...***\nNo-one knows how to pronounce Fusure. Even Fusure couldn’t tell you!"
-                    "***Did you know...***\nDaithi, Mugg and Fusure all have 2 LAN wins each. Who's gonna be the first to get to 3???"
-                    "***Did you know...***\nThese facts haven't been updated in years!!! :sweat_smile:"
-                    "***Did you know...***\nSome say Ghosts favourite move is the left, right, goodnight. Others think it's the whiff! :joy:"
-                    "***Did you know...***\nDave Forehead has written the history of RLI, go check it out in the pinned messages in announcements if you haven't seen it!"
-                    "***Did you know...***\nSome say that Pandaa lives off a diet of just bamboo... who's to say he doesn't?"
-                    "***Did you know...***\nRedeyes was our first and second ever Seasonal Elite champion!"
-                    "***Did you know...***\nRLI had it's first ever LAN event on the 21/04/19 in Cork"
-                    "***Did you know...***\nDemoqz was our first ever 6mans league champion!"
-                    "***Did you know...***\nJkee is by far and away the loudest player in RLI :joy:"
-                    "***Did you know...***\nDave Forehead can't make a bot to save his life! :sweat_smile:"
-                    "***Did you know...***\nAfter seeing his performance at RLI's first ever LAN, some believe that Crossy has never hit a bowling pin in his life!"
-                    "***Did you know...***\nDid you know Mugg, Fusure and ItsPureLogic were the winners of RLIs first ever LAN"
-                    "***Did you know...***\nAdzer was the MVP of RLIs first ever LAN"
-                    '***Did you know...***\nPat. won the "Redeyes Redemption" award at RLIs first ever LAN, a reward for the player who performed above expectations the most. It got its name from JtoPrey who funded the award after winning money from a Redeyes giveaway'
-                    "***Did you know...***\nWe have a twitter page!!! :open_mouth:\nhttps://twitter.com/RL_Ireland"
-                    "***Did you know...***\nWe have a twitch!!!\nhttps://www.twitch.tv/rlireland"
-                    "***Did you know...***\nWe have a Youtube account!!!\nhttps://www.youtube.com/channel/UC1pwAipHTesV55OYY7r8FMg"
-                    "***Did you know...***\nWe have a Facebook page!!!\nhttps://www.facebook.com/groups/RLIreland/?ref=bookmarks"
-                    ]
+                "***Did you know...***\nDFH stadium stands for Dave Forehead stadium!",
+                "***Did you know...***\nDave Forehead actually lives in a shed!",
+                "***Did you know...***\nSo far 9 players have played under the name “Team Forehead” they are: Enwrong, Daithi, Mayday, Tully, XDarkArcticX, SeeNaRee, Eddi, Durkan and Fusure",
+                "***Did you know...***\nRL Ireland was founded by Joseph and Darcy.",
+                "***Did you know...***\nRL Ireland was first set up as a facebook page on the 28th December 2015.",
+                "***Did you know...***\nBarzey shares the same birthday as Rocket League! :smile:",
+                "***Did you know...***\nDaithi has 2 LAN wins under his belt... and 0 friends!!! :joy:",
+                "***Did you know...***\nTully is an All-Ireland garlic bread eating champion :joy:",
+                "***Did you know...***\nThat the scarab is banned from competitive play due to it’s cubeular hitbox which allows it to hit the ball much harder than any other car at any angle. FACT!",
+                "***Did you know...***\nContrary to popular belief Redeyes does not actually have red eyes!",
+                "***Did you know...***\nSome say that Chef was born wearing a chefs hat, others say it’s just his hair.",
+                "***Did you know...***\nFor ages, no-one knew what the LTX in LTXSam stood for. Now we know it's Lieutennant X Sam from his Xbox days!",
+                "***Did you know...***\nDave Forehead, Daithi and Tully all share the honour of being the first ever Rocket League LAN winners in Ireland!",
+                "***Did you know...***\nThat Lovelycans doesn’t just drink cans, in fact he rarely drinks cans!",
+                "***Did you know...***\nAfter seeing him at Q-con, some believe that Dormer was born on the dancefloor.",
+                "***Did you know...***\nJoseph once took up so much boost that it caused a drought in the pitch itself, this pitch is now called wasteland!",
+                "***Did you know...***\nSome say that Mayday is so defensive that he’s never even been in the opponents half!",
+                "***Did you know...***\nLegend has it Enwrong’s nickname used to be solar panel head….. Can’t imagine why",
+                "***Did you know...***\nLawlurr was the first ever console player to win an RLI event.",
+                "***Did you know...***\nNo-one knows if Mugg is a typo or if he meant to type it like that. What do you think?",
+                "***Did you know...***\nNo-one knows how to pronounce Fusure. Even Fusure couldn’t tell you!",
+                "***Did you know...***\nDaithi, Mugg and Fusure all have 2 LAN wins each. Who's gonna be the first to get to 3???",
+                "***Did you know...***\nThese facts haven't been updated in years!!! :sweat_smile:",
+                "***Did you know...***\nSome say Ghosts favourite move is the left, right, goodnight. Others think it's the whiff! :joy:",
+                "***Did you know...***\nDave Forehead has written the history of RLI, go check it out in the pinned messages in announcements if you haven't seen it!",
+                "***Did you know...***\nSome say that Pandaa lives off a diet of just bamboo... who's to say he doesn't?",
+                "***Did you know...***\nRedeyes was our first and second ever Seasonal Elite champion!",
+                "***Did you know...***\nRLI had it's first ever LAN event on the 21/04/19 in Cork",
+                "***Did you know...***\nDemoqz was our first ever 6mans league champion!",
+                "***Did you know...***\nJkee is by far and away the loudest player in RLI :joy:",
+                "***Did you know...***\nDave Forehead can't make a bot to save his life! :sweat_smile:",
+                "***Did you know...***\nAfter seeing his performance at RLI's first ever LAN, some believe that Crossy has never hit a bowling pin in his life!",
+                "***Did you know...***\nDid you know Mugg, Fusure and ItsPureLogic were the winners of RLIs first ever LAN",
+                "***Did you know...***\nAdzer was the MVP of RLIs first ever LAN",
+                '***Did you know...***\nPat. won the "Redeyes Redemption" award at RLIs first ever LAN, a reward for the player who performed above expectations the most. It got its name from JtoPrey who funded the award after winning money from a Redeyes giveaway',
+                "***Did you know...***\nWe have a twitter page!!! :open_mouth:\nhttps://twitter.com/RL_Ireland",
+                "***Did you know...***\nWe have a twitch!!!\nhttps://www.twitch.tv/rlireland",
+                "***Did you know...***\nWe have a Youtube account!!!\nhttps://www.youtube.com/channel/UC1pwAipHTesV55OYY7r8FMg",
+                "***Did you know...***\nWe have a Facebook page!!!\nhttps://www.facebook.com/groups/RLIreland/?ref=bookmarks",
+                ]
 
 facts = [       
                     "***Did you know...***\nDFH stadium stands for Dave Forehead stadium!",
@@ -94,12 +90,12 @@ facts = [
                     "***Did you know...***\nThere are many *alleged* stories about Dave Forehead, such as:\n\n- He lives in a shed\n- He verbally abuses his RLIS teammates\n- He has previously attacked homeless people\n- His name isn't actually Dave!",
                     ]
 
-welcome_channel = XXXXXXXXXXXX
-role_channel = XXXXXXXXXXXX
-playground = XXXXXXXXXXXX
-comment_channel = XXXXXXXXXXXX
-comment_inbox = XXXXXXXXXXXX
-exit_door = XXXXXXXXXXXX
+welcome_channel = 000000000000000000
+role_channel = 000000000000000000
+playground = 000000000000000000
+comment_channel = 000000000000000000
+comment_inbox = 000000000000000000
+exit_door = 000000000000000000
 
 class Helper(commands.Cog):
 
@@ -112,8 +108,8 @@ class Helper(commands.Cog):
     @commands.command()
     async def invite(self, ctx):
         if ctx.channel.id == playground:
-            msg = "**Our Discord Invite Link**: https://discord.gg/e7C6CCE"
-            await ctx.send(msg)
+            invite = await ctx.channel.create_invite(max_age=86400)
+            await ctx.send(f"**RLI Invite Link:**\n{invite}")
 
     @commands.command()
     async def dyk(self, ctx):
@@ -123,13 +119,13 @@ class Helper(commands.Cog):
     @commands.command()
     async def vintage_dyk(self, ctx):
         if ctx.channel.id == playground:
-            await ctx.send(vintage_facts[random.randint(0,len(facts)-1)])
+            await ctx.send(vintage_facts[random.randint(0,len(vintage_facts)-1)])
 
     @commands.command()
     async def me(self, ctx):
         if ctx.message.channel.id == playground:
             roles = [role for role in ctx.message.author.roles]
-            bots = [XXXXXXXXXXXXXXXXXX, XXXXXXXXXXXXXXXXXX, XXXXXXXXXXXXXXXXXX, XXXXXXXXXXXXXXXXXX, XXXXXXXXXXXXXXXXXX, XXXXXXXXXXXXXXXXXX, XXXXXXXXXXXXXXXXXX, XXXXXXXXXXXXXXXXXX, XXXXXXXXXXXXXXXXXX, XXXXXXXXXXXXXXXXXX]
+            bots = [000000000000000000, 000000000000000000, 000000000000000000, 000000000000000000, 000000000000000000, 000000000000000000, 000000000000000000, 000000000000000000, 000000000000000000, 000000000000000000]
             #       "Enwrong",          "LovelyCans",       "Pandaa",           "Res",              "Crossy",           "Gilzo",            "Art3mis",          "Aaron",            "Redport",          "Paradox"
 
             embed = discord.Embed(colour=ctx.message.author.color, timestamp=ctx.message.created_at)
@@ -149,7 +145,7 @@ class Helper(commands.Cog):
             embed.add_field(name='Top role:', value=ctx.message.author.top_role.mention)
 
 
-            if ctx.message.author.id == XXXXXXXXXXXXXXXXXX:
+            if ctx.message.author.id == 00000000000000000000000:
                 embed.add_field(name='Is User a Bot?', value="Well... D is for Deranking!") #ID is Dormer
 
             elif ctx.message.author.id in bots:
@@ -167,6 +163,7 @@ class Helper(commands.Cog):
             await ctx.message.delete()
             community_comments = get(ctx.guild.channels, id=comment_inbox)
             await community_comments.send("```{} said:\n\n{}```".format(ctx.author.name, comment))
+
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
